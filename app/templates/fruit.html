@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h6 style="background-color:cyan" class="display-4 text-center">This Data come from sqlite DataBase</h6>
+<br>
+<h1 class="display-3 text-center">List OF Fruits</h1>
+
+<br>
+
+{% for n in Fruitdata %}
+<div class='container'>
+    <h4>{{n.name | upper }}</h4>
+    <h5>{{n.season}}</h5>
+    <p>{{n.desc | upper}}</p>
+</div>
+{% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<h1 class="display-3 text-center">Contact Us</h1>
+
+<br>
+<br>
+
+<div class='container d-flex justify-content-around'>
+    <form class='w-25 p-3 ' method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                   placeholder="Enter email">
+
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Full Name</label>
+            <input name="name" type="text" class="form-control" id="exampleInputPassword1" placeholder="Name">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Phone Number</label>
+            <input name="phone" type="number" class="form-control" id="exampleInputPassword2" placeholder="PhoneNumber">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <br>
+        <br>
+
+        <table border="1" cellpadding="10">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+            <tr>
+                <td>{{name}}</td>
+                <td>{{email}}</td>
+                <td>{{phone}}</td>
+            </tr>
+        </table>
+    </form>
+</div>
+<br>
+<br>
+<div class=''>
+    <h2 class="display-3 text-center">Django Forms</h2>
+    {{forms}}  <!-- django forms -->
+</div>
+<br>
+<br>
+<br>
+
+{% endblock %}

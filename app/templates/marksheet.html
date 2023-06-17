@@ -1,0 +1,52 @@
+{% include "header.html" %}
+
+{% block content %}
+
+<h1 class="display-3 text-center">MarkSheet</h1>
+
+
+<div class='container d-flex justify-content-around'>
+    <form class='w-25 p-3 ' method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="exampleInputEmail1">Subject 1</label>
+            <input name="num1" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                   placeholder="Enter Marks">
+
+            <label for="exampleInputEmail1">Subject 2</label>
+            <input name="num2" type="text" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp"
+                   placeholder="Enter Marks">
+
+            <label for="exampleInputEmail1">Subject 3</label>
+            <input name="num3" type="text" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp"
+                   placeholder="Enter Marks">
+
+
+            <label for="exampleInputEmail1">Subject 4</label>
+            <input name="num4" type="text" class="form-control" id="exampleInputEmail4" aria-describedby="emailHelp"
+                   placeholder="Enter Marks">
+
+            <label for="exampleInputEmail1">Subject 5</label>
+            <input name="num5" type="text" class="form-control" id="exampleInputEmail5" aria-describedby="emailHelp"
+                   placeholder="Enter Marks">
+
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <br>
+        <br>
+        <label>Total</label>
+        <input value='{{total}}' type="text" class="form-control" id="exampleInputEmail6"
+               aria-describedby="emailHelp" placeholder="Total">
+        <br>
+        <label>Percentage</label>
+        <input value='{{percentage}}' type="text" class="form-control" id="exampleInputEmail7"
+               aria-describedby="emailHelp" placeholder="Percentage">
+        <br>
+        <label>Divisions</label>
+        <input value='{{division}}' type="text" class="form-control" id="exampleInputEmail8"
+               aria-describedby="emailHelp" placeholder="Divisions">
+
+    </form>
+</div>
+
+{% endblock %}

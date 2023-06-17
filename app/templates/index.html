@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class='container-fluids'>
+    <h1 class='text-center'>{{heading}}</h1>
+</div>
+{% load static %}
+<br>
+<br>
+<h5 style="background-color:cyan" class='text-center'>Using Django Static method to upload image</h5>
+<img src="{% static '/vintage.jpg' %}" class="rounded mx-auto d-block max-width: 20%" alt="...">
+<br>
+<br>
+<H3 style="background-color:cyan">Display courses item using django for loop</H3>
+{{symbol}}
+
+{% for i in courselist %}
+<div><h5>{{ i }}</h5></div>
+<!--<div><h5>{{forloop.counter}} {{ i }}</h5></div>   # give a index number-->
+<!--<div><h5>{{forloop.counter0}} {{ i }}</h5></div>   # give index number from to 0-->
+<!--<div><h5>{{forloop.revcounter}} {{ i }}</h5></div> # reverse index number-->
+<!--<div><h5>{{forloop.revcounter0}} {{ i }}</h5></div> # reverse index number from to 0-->
+<!--<div><h5>{{forloop.first}} {{ i }}</h5></div> # give a first element True-->
+<!--<div><h5>{{forloop.last}} {{ i }}</h5></div> # give a lat Element True-->
+
+{% endfor %}
+
+
+<br>
+<br>
+<H3 style="background-color:cyan">Django For Loop </H3>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Name</th>
+        <th>Duration</th>
+    </tr>
+
+    {% for i in course_detail %}
+    <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.Duraton}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<br>
+<br>
+<H3 style="background-color:cyan">Django If else Condition</H3>
+{% for num in Numbers %}
+{% if num == 10 %}
+<h6>No Data Found</h6>
+{% else %}
+<h3>{{num}}</h3>
+{% endif %}
+{% endfor %}
+
+
+{% endblock %}

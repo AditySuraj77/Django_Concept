@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<h1 class="display-3 text-center">Calculator</h1>
+
+<div class='container d-flex justify-content-around'>
+    <form class='w-25 p-3 ' method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="exampleInputEmail1">First Number</label>
+            <input name="num1" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                   placeholder="First Number">
+
+        </div>
+        <div class="form-group">
+            <label>Operations</label>
+            <select name="operation" class="form-control">
+                <option>Select</option>
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Second Number</label>
+            <input name="num2" type="text" class="form-control" id="exampleInputPassword2"
+                   placeholder="Second Number">
+        </div>
+        <button type="submit" class="btn btn-primary">Calculate</button>
+        <br>
+        <br>
+        <label>OutPut</label>
+        <input value="{{result}}" type="text" class="form-control" id="exampleInputPassword3" placeholder="OutPut">
+
+    </form>
+</div>
+
+
+{% endblock %}

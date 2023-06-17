@@ -1,0 +1,28 @@
+{% include "header.html" %}
+
+{% block content %}
+
+<h1 class="display-3 text-center">Even Odd</h1>
+
+
+<div class='container d-flex justify-content-around'>
+    <form class='w-25 p-3 ' method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="exampleInputEmail1">Enter Number</label>
+            <input name="num" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                   placeholder="Enter Number">
+
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        {{error}}
+        <br>
+        <br>
+        <label>OutPut</label>
+        <input value='{{even_or_odd}}' type="text" class="form-control" id="exampleInputEmail2"
+               aria-describedby="emailHelp" placeholder="OutPut">
+
+    </form>
+</div>
+
+{% endblock %}

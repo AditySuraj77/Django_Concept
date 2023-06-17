@@ -1,0 +1,23 @@
+{% include "header.html" %}
+
+{% block content %}
+
+<h1 class="display-3 text-center">PlayersDetail</h1>
+<br>
+<br>
+    {% for player in player %}
+<div>
+    <h2>{{player.name}}</h2>
+</div>
+
+<div>
+    <h4>{{player.age}}</h4>
+</div>
+
+<div>
+    <p>{{player.detail | safe}}</p>
+</div>
+    {% endfor %}
+
+
+{% endblock %}

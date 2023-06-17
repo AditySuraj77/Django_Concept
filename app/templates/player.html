@@ -1,0 +1,17 @@
+{% include "header.html" %}
+
+{% block content %}
+
+<h1 class="display-3 text-center">Players</h1>
+<br>
+<br>
+
+
+<marquee width="100%" direction="left" height="50px" onmouseover="stop()" onmouseout="start()">
+    {% for n in player%}
+    <a href="/playerdetail"> {{n.name}} </a> &nbsp;&nbsp;&nbsp;
+    {% endfor%}
+</marquee>
+
+
+{% endblock %}
